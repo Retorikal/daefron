@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -rf ./bin
+cp -r src bin
+find ./bin -type f -name "*.java" -exec rm '{}' \;
+
+find -name "*.java" > build
+javac -d ./bin @build 
+rm build
+
+
